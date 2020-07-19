@@ -1,8 +1,14 @@
 language: node_js
-
 node_js:
-  - "12"
-
+  - "node"
+warnings_are_errors: false
+install:
+  - yarn install
 script:
-  - yarn run test
   - yarn run build
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: gc3QyYpO3T0IBO62jMdjrvNCtt3WNhDK2U8FjpJ+Y86fP1t2coTfwoUaMrBhLokmyK1qG6pa5xKf6/GbY/T7O2xUc3JD4Cpiklll5j54hdNFls4sS+3dtZesukCxmUp78iR+17ItQGpbFB6oxFXAOzSMBP3zUgrpEKv9TPAtI1NPvCAkj2FOnLtZlr0x5nf6y4UGvA85ST0eqzfF0KoN9l8ULbIQt9Ad+uJQqhABHePRBke1/mmXHfxRp8Jz8jLKBNdYXwv5nCwniIJkYeOj8FcUKWBgmC5gVaZxitu9RR26ckV5IdZym0hKlcLNwpwfmjh94eXsy/TzePJE7XOJ4XeJUEliTwZ730APoKGo/p8rc58RyRqgPgcWt1a23nNJ4MEpQnFQingeEOte7Kc38OXb8VerYi3MX/t9b4YuuBGgGpWptWE062t4mQgw+zF8utgUf36PszzYd7ajdqqUTl1lMPOROsWWJiEJ2KbozMzz3sQyWgG02qlZ/dn9tm2hs6qRSa3xhdJ/DHXry8YEs2brZzqUzQLu1v7meN7TfpkcXc7zqTsnFXJ2vphRSFcbhfPSX5yWojLz3q0bG3Ns7aRyalXmBWr/YMcZeUXgMNSvSXYYQlDm4JWbTiElY9AJuaL/ysCgEytybQ3I/sR7PH0EV8fVcsgE3GM/5fPE0Z4=
+  project: travis-react
